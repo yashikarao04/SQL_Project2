@@ -28,7 +28,7 @@ ROW_NUMBER() OVER(
 PARTITION BY company, industry, total_laid_off, percentage_laid_off, `date`) AS row_num
 FROM layoffs_staging;
 
--- Creating CTE for remving duplicates 
+-- Creating CTE for removing duplicates 
 
 WITH duplicate_cte AS
 (SELECT *, 
@@ -44,8 +44,6 @@ WHERE row_num > 1;
 
 SELECT * FROM world_layoffs.layoffs_staging
 WHERE company = '&Open';
-
-DROP TABLE `layoffs_staging2`;
 
 CREATE TABLE `layoffs_staging2` (
 	`company` text,
