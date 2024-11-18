@@ -119,10 +119,6 @@ SELECT country
 FROM layoffs_staging2
 WHERE country LIKE 'United States%';
 
-UPDATE layoffs_staging2
-SET industry = 'Crypto'
-WHERE industry LIKE 'Crypto%'; 
-
 SELECT DISTINCT country, TRIM(TRAILING '.' FROM country)
 FROM layoffs_staging2
 ORDER BY 1;
